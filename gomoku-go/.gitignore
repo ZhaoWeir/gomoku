@@ -1,0 +1,12 @@
+# 编译产物
+/gomoku
+/gomoku-go
+*.exe
+
+# 测试缓存
+*.test
+*.out
+
+# 编辑器
+.idea/
+.vscode/
