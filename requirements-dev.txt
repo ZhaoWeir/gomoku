@@ -1,0 +1,2 @@
+# 开发依赖（推荐使用 pyproject.toml 的 dev 选项）
+# 安装方式：pip install -e ".[dev]"
