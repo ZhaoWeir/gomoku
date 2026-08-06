@@ -1,0 +1,46 @@
+name: Go CI
+
+on:
+  push:
+    branches: [go-version, main]
+    paths:
+      - "gomoku-go/**"
+  pull_request:
+    branches: [go-version, main]
+    paths:
+      - "gomoku-go/**"
+
+jobs:
+  test:
+    name: Go Test & Lint
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        go-version: ["1.22", "1.23"]
+    defaults:
+      run:
+        working-directory: gomoku-go
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go-version }}
+          cache-dependency-path: gomoku-go/go.sum
+
+      - name: gofmt check
+        run: |
+          files=$(gofmt -l .)
+          if [ -n "$files" ]; then
+            echo "以下文件需要格式化:"; echo "$files"; exit 1
+          fi
+
+      - name: go vet
+        run: go vet ./...
+
+      - name: go build
+        run: go build ./...
+
+      - name: go test
+        run: go test -v ./...
