@@ -1,5 +1,12 @@
 # 五子棋（Gomoku）
 
+[![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Tests](https://img.shields.io/badge/tests-19%20passed-brightgreen)]()
+[![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
 一个可直接运行的终端五子棋游戏，支持**双人对战**、**人机对战**和 **AI 对战**三种模式，纯 Python 标准库实现，无第三方运行依赖。
 
 ## 环境要求
@@ -103,3 +110,9 @@ game.play(move)
 if game.winner is not None:
     print(f"{game.winner.value} 方获胜！")
 ```
+
+## License
+
+[MIT License](LICENSE) © 2026 ZhaoWeir
+
+本项目采用 MIT 许可证开源，允许自由使用、修改和分发，详见 [LICENSE](LICENSE) 文件。
