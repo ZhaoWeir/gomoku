@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gomoku"
+version = "1.0.0"
+description = "五子棋游戏 - 终端双人/人机对战"
+requires-python = ">=3.11"
+readme = "README.md"
+
+# 运行时依赖（纯标准库实现，无第三方依赖）
+dependencies = []
+
+[project.optional-dependencies]
+# 开发依赖：代码质量、测试、格式化
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+    "black>=24.0",
+    "mypy>=1.10",
+    "pre-commit>=3.7",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["gomoku*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
