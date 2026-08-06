@@ -8,6 +8,8 @@ version = "1.0.0"
 description = "五子棋游戏 - 终端双人/人机对战"
 requires-python = ">=3.11"
 readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "ZhaoWeir", email = "1204013706@qq.com" }]
 
 # 运行时依赖（纯标准库实现，无第三方依赖）
 dependencies = []
